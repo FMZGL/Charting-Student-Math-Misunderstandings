@@ -80,7 +80,7 @@ Hugging Face `datasets.set_format(type='torch')` causes an upstream `torchvision
 │   └── my_test_labels.csv       # Test dataset ground truth labels
 ├── saves/
 │   └── Gemma-2-9B/
-│       └── lora_seqcls/         # LoRA Checkpoints & Adapter weights
+│   └── Gemma2-9B-cv93         # LoRA Checkpoints & Adapter weights(I will push it to huggingface later)
 ├── output/
 │   ├── output.csv               # Top-3 decoded prediction classes (ready for Kaggle)
 │   └── evaluation_results.png   # Matplotlib Accuracy bar plot on hold-out set

@@ -80,7 +80,7 @@ graph TD
 │   └── my_test_labels.csv       # 测试集真实标签（用于 MAP@3 评估）
 ├── saves/
 │   └── Gemma-2-9B/
-│       └── lora_seqcls/         # 自动保存的 LoRA 各步数 Checkpoints 及权重
+│   └── Gemma2-9B-cv93         # 自动保存的 LoRA 各步数 Checkpoints 及权重（后面会上传到hugging face)
 ├── output/
 │   ├── output.csv               # 导出的 Top-3 预测分类文件（符合 Kaggle 提交格式）
 │   └── evaluation_results.png   # 自动绘制的测试集 Top-N 准确率柱状图
