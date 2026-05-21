@@ -1,0 +1,17 @@
+# PyTorch framework (CUDA recommended)
+torch>=2.0.0
+
+# Hugging Face ecosystem for Gemma-2-9B model loading & PEFT LoRA
+transformers>=4.42.0
+peft>=0.11.0
+datasets>=2.20.0
+accelerate>=0.30.0
+bitsandbytes>=0.46.1
+
+# Data processing and analysis
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.2.0
+
+# Plotting and metrics visualization
+matplotlib>=3.7.0
