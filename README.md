@@ -149,3 +149,5 @@ Saves the visualization output directly to `training_loss_curves.png`.
 
 ## 🏆 License & Acknowledgments
 Optimized for the *Kaggle: Charting Student Math Misunderstandings* competition. Powered by Hugging Face PEFT and PyTorch.
+
+Thanks to https://www.kaggle.com/code/kishanvavdara/ensemble-gemma-qwen-deepseek

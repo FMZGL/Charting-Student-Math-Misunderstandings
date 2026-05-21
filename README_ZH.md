@@ -149,3 +149,5 @@ python scripts/plot_loss.py
 
 ## 🏆 致谢与版权说明
 本项目专门针对 *Kaggle: Charting Student Math Misunderstandings* 竞赛进行算法深度调优，基于 Hugging Face PEFT 与 PyTorch 框架构建。
+
+感谢原作者在设计上给予的启发https://www.kaggle.com/code/kishanvavdara/ensemble-gemma-qwen-deepseek
