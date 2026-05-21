@@ -42,7 +42,7 @@ graph TD
     C --> D[LoRA Adapter]
     D --> E[Custom Class Head score layer]
     E --> F[Top-3 Ranked Probabilities]
-    F --> G[MAP@3 Metrics Evaluation]
+    F --> G["MAP@3 Metrics Evaluation"]
 ```
 
 ---
