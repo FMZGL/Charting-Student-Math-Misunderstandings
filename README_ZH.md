@@ -24,7 +24,7 @@
 为了在保证深度推理能力的同时，实现在主流 GPU 上高效、低门槛的本地化部署，本项目精心构建了以下顶尖的开源大模型技术栈：
 
 * **骨干大模型 (Foundation Model)**: **Gemma-2-9B-IT** (Google)。
-* **微调范式 (Fine-Tuning Paradigm)**: **PEFT / LoRA (低秩适应)**。通过冻结庞大的基座模型参数并仅训练少量的低秩更新矩阵，可训练参数占比被控制在 **< 1%**。这在大幅压低显存（VRAM）占用的同时，能有效克服全参数微调时的“灾难性遗忘”难题，保持了模型极强的通用推理基底。
+* **微调范式 (Fine-Tuning Paradigm)**: **PEFT / LoRA (低秩适应)**。通过冻结庞大的基座模型参数并仅训练少量的低秩更新矩阵，可训练参数占比被控制在 **< 1%**。这在大幅压低显存（VRAM）占用的同时，能有效克服全参数微调时的“灾难性遗忘”难题，保持了模型极强的通用推理基底。获取该模型https://huggingface.co/FMZGL/Gemma2-9b-cv93
 * **技术栈全景 (Full Tech Stack)**:
   * **深度学习基础**：`Python 3.10+`, `PyTorch 2.0+` (针对 Ampere 架构的 bfloat16 混合精度深度优化)
   * **大模型与微调生态**：Hugging Face `transformers` (Gemma-2 核心结构化接口), `peft` (LoRA 核心引擎), `datasets` (高效流式数据加载)
@@ -78,9 +78,9 @@ graph TD
 │   ├── my_train.csv             # 清洗后的训练集数据（共 ~33,027 条样本）
 │   ├── my_test.csv              # 测试集/保留验证集数据
 │   └── my_test_labels.csv       # 测试集真实标签（用于 MAP@3 评估）
-├── saves/
+├── models/
 │   └── Gemma-2-9B/
-│   └── Gemma2-9B-cv93         # 自动保存的 LoRA 各步数 Checkpoints 及权重（后面会上传到hugging face)
+│   └── Gemma-2-9B-cv93/         # 自动保存的 LoRA 各步数 Checkpoints 及权重
 ├── output/
 │   ├── output.csv               # 导出的 Top-3 预测分类文件（符合 Kaggle 提交格式）
 │   └── evaluation_results.png   # 自动绘制的测试集 Top-N 准确率柱状图
@@ -149,5 +149,3 @@ python scripts/plot_loss.py
 
 ## 🏆 致谢与版权说明
 本项目专门针对 *Kaggle: Charting Student Math Misunderstandings* 竞赛进行算法深度调优，基于 Hugging Face PEFT 与 PyTorch 框架构建。
-
-感谢原作者在设计上给予的启发https://www.kaggle.com/code/kishanvavdara/ensemble-gemma-qwen-deepseek

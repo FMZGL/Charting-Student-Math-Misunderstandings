@@ -24,7 +24,7 @@ Traditionally, diagnosing these misconceptions requires experienced teachers to 
 To achieve deep reasoning performance while maintaining training efficiency on consumer-grade and enterprise GPUs, the project leverages a highly optimized open-source ecosystem:
 
 * **Foundation Model**: **Gemma-2-9B-IT** (Google). Built on Google's latest lightweight, high-performance architecture, the 9B-Instruct model shows exceptional semantic understanding, logical reasoning, and context-parsing capability. It is uniquely qualified to parse multi-step mathematical arguments and student justifications.
-* **Fine-Tuning Paradigm**: **PEFT / LoRA (Low-Rank Adaptation)**. By freezing the massive base model parameters and updating low-rank adapter matrices, we restrict trainable parameters to **< 1%**. This dramatically lowers the VRAM footprint while mitigating the risk of *catastrophic forgetting* of general reasoning capabilities.
+* **Fine-Tuning Paradigm**: **PEFT / LoRA (Low-Rank Adaptation)**. By freezing the massive base model parameters and updating low-rank adapter matrices, we restrict trainable parameters to **< 1%**. This dramatically lowers the VRAM footprint while mitigating the risk of *catastrophic forgetting* of general reasoning capabilities.You can get its model on https://huggingface.co/FMZGL/Gemma2-9b-cv93
 * **Full Technology Stack**:
   * **Deep Learning Framework**: `Python 3.10+`, `PyTorch 2.0+` (Ampere-native bfloat16 mixed-precision optimization)
   * **Model Interface & Adapters**: Hugging Face `transformers` (Gemma-2 structural interface), `peft` (LoRA adapter engine), `datasets` (dynamic batch streaming)
@@ -78,9 +78,9 @@ Hugging Face `datasets.set_format(type='torch')` causes an upstream `torchvision
 │   ├── my_train.csv             # Cleaned training dataset (~33,027 samples)
 │   ├── my_test.csv              # Test dataset
 │   └── my_test_labels.csv       # Test dataset ground truth labels
-├── saves/
+├── models/
 │   └── Gemma-2-9B/
-│   └── Gemma2-9B-cv93         # LoRA Checkpoints & Adapter weights(I will push it to huggingface later)
+│   └── Gemma-2-9B-cv93/         # LoRA Checkpoints & Adapter weights
 ├── output/
 │   ├── output.csv               # Top-3 decoded prediction classes (ready for Kaggle)
 │   └── evaluation_results.png   # Matplotlib Accuracy bar plot on hold-out set
@@ -149,5 +149,3 @@ Saves the visualization output directly to `training_loss_curves.png`.
 
 ## 🏆 License & Acknowledgments
 Optimized for the *Kaggle: Charting Student Math Misunderstandings* competition. Powered by Hugging Face PEFT and PyTorch.
-
-Thanks to https://www.kaggle.com/code/kishanvavdara/ensemble-gemma-qwen-deepseek
